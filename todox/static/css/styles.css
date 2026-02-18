@@ -1,0 +1,94 @@
+/* Custom theme variables */
+/* @theme {
+  --font-display: "Arial", sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-primary: #ff9324;
+} */
+
+/* Base layer overrides */
+@layer base {
+  html {
+    font-family: var(--font-display);
+  }
+
+  body {
+    background-color: #fcfbfc;
+  }
+}
+
+/* Custom styles for Backbone interactions */
+.completed label {
+  color: #9ca3af;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+li .edit {
+  display: none;
+}
+
+li.editing .edit {
+  display: block;
+}
+
+li.editing .view {
+  display: none;
+}
+
+/* Custom Checkbox Animation */
+.custom-checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  /* Circle */
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  transform: scale(0);
+  transition: 0.2s transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: white;
+}
+
+.custom-checkbox:checked {
+  background-color: #3b82f6;
+  /* Blue 500 */
+  border-color: #3b82f6;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
